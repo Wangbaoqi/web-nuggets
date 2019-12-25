@@ -1,0 +1,129 @@
+
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all .2s;
+  // transform: translate3d(0, -100%, 0);
+
+  height: 3rem;
+  background-color: #ffffff;
+  color: #909090;
+}
+
+
+.header-container {
+
+  .container {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 960px;
+    height: 100%;
+
+
+    .logo {
+      min-width: 98px;
+      margin-right: 2rem;
+    }
+    .main-nav {
+      flex: 1 0 auto;
+
+
+      .nav-item {
+        display: flex;
+        align-items: center;
+        // line-height: 3rem;
+        padding: 0 0.6rem;
+        color: #71777c;
+
+        :hover {
+          color: #007fff;
+        }
+      }
+      
+     
+      .nav-list {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        height: 100%;
+
+
+        .main-nav-item {
+          font-size: 0.8rem;
+          .phone-hide {
+            display: flex;
+          }
+        }
+
+        .search {
+          display: flex;
+          justify-content: flex-end;
+          flex: 1 1 auto;
+
+          .form-search {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid hsla(0,0%,59.2%,.2);
+            border-radius: 2px;
+            background-color: rgba(227,231,236,.2);
+            height: 1.5rem;
+
+            .search-input {
+              border: none;
+              width: 6rem;
+              padding: .4rem;
+              box-shadow: none;
+              outline: none;
+              color: #666;
+              background-color: transparent;
+            }
+          }
+        }
+
+
+        .add {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+
+          .add-group {
+            display: flex;
+            height: 1.5rem;
+            
+            .add-btn {
+              height: 100%;
+              color: #fff;
+              background-color: #007fff;
+              border-radius: 3px;
+              border-top-right-radius: 0;
+              border-bottom-right-radius: 0;
+            }
+            .more {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 0.8rem;
+              background: #007fff;
+              border-left: 1px solid hsla(0,0%,100%,.1);
+              border-top-left-radius: 0;
+              border-bottom-left-radius: 0;
+              border-top-right-radius: 3px;
+              border-bottom-right-radius: 3px;
+
+              i {
+                color: #ffffff;
+                font-size: .8rem;
+              }
+            }
+          }
+          
+        }
+      }
+    }
+  }
+}
+

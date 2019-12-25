@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 
 
@@ -19,9 +19,9 @@ export default class Provider extends Component {
 
   render() {
     return (
-      <div>
+      <Fragment>
         {this.props.children}
-      </div>
+      </Fragment>
     )
   }
 }

@@ -1,14 +1,22 @@
 .app-container {
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-  max-width: 60rem;
 
 
 
-  .app-header {
-    
+  .main-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 960px;
+
+    .main-content {
+      margin-top: 4rem;
+      background: #ffffff;
+      height: 300px;
+    }
   }
-}
+  
 
+
+
+}
 

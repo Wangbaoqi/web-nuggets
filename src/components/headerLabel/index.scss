@@ -1,0 +1,33 @@
+.header-label {
+  position: fixed;
+  top: 3rem;
+  left: 0;
+  right: 0;
+  height: 2rem;
+  background: #ffffff;
+  font-size: 0.7rem;
+  width: 100%;
+  
+  border-bottom: 1px solid #f1f1f1;
+  border-top: 1px solid #f1f1f1;
+  
+
+  .label-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    margin: 0 auto;
+    max-width: 960px;
+  }
+  .label-list {
+    display: flex;
+    align-items: center;
+
+    .label-item {
+      padding: 0 0.3rem;
+      cursor: pointer;
+
+    }
+  }
+}
