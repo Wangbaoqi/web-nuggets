@@ -1,0 +1,88 @@
+.list-header {
+  padding: .7rem;
+  border-bottom: 1px solid hsla(0,0%,59.2%,.1);
+
+  .list-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 0.7rem;
+
+    .nav-list {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      .nav-item {
+        padding: 0 .6rem;
+        border-right: 1px solid hsla(0,0%,59.2%,.2);
+
+        &:last-child {
+          border-right: 0;
+        }
+      }
+    }
+
+    .dorp-down-area {
+      position: relative;
+
+      font-size: .6rem;
+      .drop-down {
+
+        .drop-toggle {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          min-width: 3.5rem;
+          border-radius: 2px;
+          padding: 2px 0;
+          font-weight: 400;
+          border: 1px solid #ebebeb;
+          cursor: pointer;
+          i {
+            font-size: .6rem;
+            color: #b2bac2;
+            margin-left: 3px;
+            transition: all .5s;
+
+          }
+          .icon-drop {
+            transform: rotate(-180deg);
+            transition: all .5s;
+          }
+
+          .drop-menu {
+            position: absolute;
+            display: none;
+            top: 113%;
+            left: -1px;
+            min-width: 3.5rem;
+  
+            box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
+            border: 1px solid #ebebeb;
+            background-color: #fff;
+
+            .router-item {
+              width: 100%;
+              line-height: 1.4rem;
+              text-align: center;
+              &:hover {
+                background: rgba(0,0,0,.05);
+              }
+            }
+          }
+        }
+
+        .mask {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+        }
+
+        
+      }
+    }
+  }
+}

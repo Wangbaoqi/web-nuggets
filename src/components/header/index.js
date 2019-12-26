@@ -17,7 +17,9 @@ export default class Header extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      activeIndex: 0
+      activeIndex: 0,
+      showMoreAdd: 'none',
+      searchActive: false
     }
   }
 
@@ -37,24 +39,50 @@ export default class Header extends Component {
     })
   }
 
+  handleShowMore() {
+    this.setState({
+      showMoreAdd: 'block'
+    })
+  }
+  handleHideMore() {
+    this.setState({
+      showMoreAdd: 'none'
+    })
+  }
+  handleSearchFocus() {
+    this.setState({
+      searchActive: true
+    })
+  }
+  handleSearchBlur() {
+    console.log('blur');
+    this.setState({
+      searchActive: false
+    })
+  }
+
   render() {
     console.log(this.props, 'header props');
     const { themeColor = '' } = this.props
-    const { activeIndex = 0 } = this.state
+    const { activeIndex = 0, showMoreAdd = 'none', searchActive = false } = this.state
 
 
     const navItem = (navList || []).map((item, idx) => {
-      
       const className = classNames({
         'nav-item': true,
         'active': idx === activeIndex
       })
-      
       return (
         <li className={className} key={`nav-${idx}`} onClick={this.handleNavActive.bind(this, idx)}>
           <Link to={item.path}>{item.title}</Link>
         </li>
     )})
+
+    const searchClassName = classNames({
+      'nav-item': true,
+      'search': true,
+      'search-active': searchActive
+    })
 
 
     return (
@@ -72,18 +100,31 @@ export default class Header extends Component {
                   {navItem}
                 </ul>
               </li>
-              <li className='nav-item search'>
+              <li className={searchClassName}>
                 <form role='' className='form-search'>
-                  <input type='search' className='search-input' placeholder='搜索掘金'/>
-                  <img className='search-icon' src='https://b-gold-cdn.xitu.io/v3/static/img/juejin-search-icon.6f8ba1b.svg' alt='search'/>
+                  <input type='search' className='search-input' placeholder='搜索掘金' 
+                    onBlur={this.handleSearchBlur.bind(this)}
+                    onFocus={this.handleSearchFocus.bind(this)}
+
+                  />
+                  <i className='search-icon fa fa-search'></i>
                 </form>
               </li>
               <li className='nav-item add'>
                 <div className='add-group'>
-                  <button className='add-btn'>写文章</button>
-                  <div className='more'>
+                  <button className='add-btn' >写文章</button>
+                  <div className='more' onClick={this.handleShowMore.bind(this)}>
                     <i className='fa fa-angle-down'></i>
                   </div>
+                  <div className='mask' style={{ display: showMoreAdd}} onClick={this.handleHideMore.bind(this)}></div>
+                  <ul className='more-list' style={{ display: showMoreAdd}}>
+                    <li className='more-item'>
+                      发布沸点
+                    </li>
+                    <li className='more-item'>
+                      <Link to='/entry-new'>分享链接</Link>
+                    </li>
+                  </ul>
                 </div>
               </li>
               <li className='nav-item notification'>

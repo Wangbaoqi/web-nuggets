@@ -1,3 +1,23 @@
 .main-timeline {
+  position: relative;
   margin-top: 6rem;
+
+
+  .timeline-entry-left {
+    margin-right: 12rem;
+    width: 700px;
+    border-radius: 2px;
+    background: #ffffff;
+  }
+
+  .timeline-aside {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 11rem;
+    background: #ffffff;
+
+  }
+
 }
