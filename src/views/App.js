@@ -36,19 +36,14 @@ class App extends Component {
     return (
       <div className="app-container container">
         <Header />
-  
         <main className='main-container'>
-
           <section className='main-content'>
             <Switch>
               {
                 routeCon
               }
-
             </Switch>
           </section>
-
-  
         </main>
       </div>
     );

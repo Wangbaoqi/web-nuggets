@@ -19,8 +19,6 @@ const routerConfig = [
   { path: '/book', component: Book },
   { path: '/active', component: Active }
 
-
-
 ]
 
 

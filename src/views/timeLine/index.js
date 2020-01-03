@@ -1,10 +1,17 @@
 import React, { Component } from 'react'
 
-import { HeaderLabel, TimelineNav, TimelineList } from '../../components/index'
+import { 
+  HeaderLabel, 
+  TimelineNav, 
+  TimelineList, 
+  Advertise,
+  AuthorList,
+  InterestBook,
+  CopyRight
+} from '../../components/index'
 
 
 import './index.scss'
-
 
 export default class TimeLine extends Component {
   static propTypes = {
@@ -22,10 +29,13 @@ export default class TimeLine extends Component {
           <div className='timeline-entry-left'>
             <TimelineNav />
             <TimelineList />
-            this is timeline left {location.pathname}
+            {/* this is timeline left {location.pathname} */}
           </div>
           <aside className='timeline-aside'>
-            this is timeline aside
+            <Advertise />
+            <AuthorList />
+            <InterestBook />
+            <CopyRight />
           </aside>
         </div>
       </div>

@@ -18,11 +18,11 @@ export default class AuthorList extends Component {
 
     const authorList = [0,1,2].map((item, idx) => (
       <li className='author-item' key={`ahthor-${idx}`}>
-        <Link to=''>
+        <Link to='' className='author'>
           <div className='item'>
             <img className='item-logo' src="https://user-gold-cdn.xitu.io/2018/11/8/166f3e51b01fc132?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1" alt="" />
             <div className='item-info'>
-              <Link to='/user/111'>Nate.wang <span className='level'>Lv3</span></Link>
+              <p className='info-title'>Nate.wang <span className='level'>Lv3</span></p>
               <div className='info-item'>前端工程师 @腾讯</div>
               <div className='info-item'>JavaScript、前端、CSS、HTML和node </div>
             </div>

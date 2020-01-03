@@ -8,6 +8,10 @@ export { default as TimelineList } from "./timelineList/index";
 export { default as Advertise } from "./advertise/index";
 export { default as AuthorList } from "./authorList/index";
 
+export { default as InterestBook } from "./interestBook/index";
+export { default as CopyRight } from "./copyRight/index";
+
+
 
 
 

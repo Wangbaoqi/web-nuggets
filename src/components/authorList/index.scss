@@ -2,6 +2,7 @@
   background: #fff;
   font-size: .7rem;
   color: #333;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
   .author-title {
     padding: .4rem .6rem;
     border-bottom: 1px solid hsla(0,0%,59.2%,.1);
@@ -10,6 +11,9 @@
   .author-item {
     padding: .4rem .6rem;
 
+    &:hover {
+      background: rgba(0,0,0,.02);
+    }
     .item {
       display: flex;
       align-items: center;
@@ -23,7 +27,7 @@
       }
       .item-info {
         overflow: hidden;
-        a {
+        .info-title {
           font-size: .7rem;
           margin-bottom: 3px;
           .level {
@@ -36,6 +40,7 @@
             border-radius: 2px;
             margin-bottom: 2px;
           }
+          
         }
         .info-item {
           color: #909090;

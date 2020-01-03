@@ -66,8 +66,27 @@ const navLabel = [
   }
 ]
 
+const copyRight = [
+  {
+    title: '关于',
+    path: '/about'
+  },{
+    title: '使用指南',
+    path: '/useGuide'
+  },{
+    title: '加入我们',
+    path: '/join'
+  },{
+    title: '商务合作',
+    path: '/cooperation'
+  },{
+    title: '@2020 掘金',
+    path: '/'
+  }
+]
 
 export {
   navList,
-  navLabel
+  navLabel,
+  copyRight
 }

@@ -1,0 +1,21 @@
+.copy-right {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  font-size: .6rem;
+
+  .right-item {
+    a {
+      &:hover {
+        color: #007fff;
+      }
+    }
+    ::after {
+      content: "·";
+      margin: 0 .2rem;
+      color: #c6cfda;
+    }
+  }
+
+}
