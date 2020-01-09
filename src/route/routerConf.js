@@ -2,7 +2,6 @@
 import { HeaderLabel } from '../components/index'
 
 
-import App from '../views/App'
 import Pins from '../views/pins/index'
 import TimeLine from '../views/timeLine/index'
 import Topic from '../views/topic/index'

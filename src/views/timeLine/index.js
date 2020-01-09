@@ -20,9 +20,16 @@ export default class TimeLine extends Component {
   }
   constructor(props) {
     super(props)
+    this.state = {
+      timeLineList: [],
+      authorList: [],
+      interestBook: []
+    }
   }
 
   componentDidMount() {
+
+    const { } = this.props
     console.log('componentDidMount');
     
     this._fetchArticleList()
@@ -57,6 +64,12 @@ export default class TimeLine extends Component {
       }
     }).then(res => {
       console.log(res)
+      const { data = {} } = res;
+      const { articleFeed:{ items = {} } } = data;
+      this.setState({
+        timeLineList: items.edges,
+
+      })
     }).catch(err => {
       console.log(err, 'error');
     })
@@ -71,6 +84,11 @@ export default class TimeLine extends Component {
       }
     }).then(res => {
       console.log(res)
+      const { data: { recommendationCard = {}}} = res
+      const { items = []} = recommendationCard;
+      this.setState({
+        authorList: items
+      })
     }).catch(err => {
       console.log(err, 'error');
     })
@@ -82,6 +100,11 @@ export default class TimeLine extends Component {
 
       }
     }).then(res => {
+      const { s = '', m = '', d = {}} = res;
+      const { data = []} = d
+      this.setState({
+        interestBook: data
+      })
       console.log(res)
     }).catch(err => {
       console.log(err, 'error');
@@ -90,21 +113,22 @@ export default class TimeLine extends Component {
 
   render() {
     console.log(this.props)
+    const { timeLineList = [], authorList = [], interestBook = [] } = this.state
     const { location, history, match, staticContext} = this.props
     return (
       <div className='main-timeline'>
-        <HeaderLabel/>
+        <HeaderLabel {...this.props}/>
         
         <div className='timeline-container'>
           <div className='timeline-entry-left'>
-            <TimelineNav />
-            <TimelineList />
+            <TimelineNav {...this.props}/>
+            <TimelineList {...this.props} timeLineList={timeLineList}/>
             {/* this is timeline left {location.pathname} */}
           </div>
           <aside className='timeline-aside'>
             <Advertise />
-            <AuthorList />
-            <InterestBook />
+            <AuthorList authorList={authorList}/>
+            <InterestBook interestBook={interestBook}/>
             <CopyRight />
           </aside>
         </div>

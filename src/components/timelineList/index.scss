@@ -23,7 +23,7 @@
           font-size: .6rem;
 
           li:not(:last-child)::after {
-            content: "Â·";
+            content: "·";
             margin: 0 .4em;
             color: #b2bac2;
           }

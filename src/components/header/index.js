@@ -110,6 +110,7 @@ export default class Header extends Component {
                   <i className='search-icon fa fa-search'></i>
                 </form>
               </li>
+              
               <li className='nav-item add'>
                 <div className='add-group'>
                   <button className='add-btn' >写文章</button>

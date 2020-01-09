@@ -6,6 +6,8 @@ import {
   Link
 } from 'react-router-dom'
 
+import { navTimeList } from '../../utils/enumConfig'
+
 import './index.scss'
 export default class TimeNav extends Component {
   static propTypes = {
@@ -16,6 +18,7 @@ export default class TimeNav extends Component {
     super(props)
 
     this.state = {
+      navIndex: 0,
       showTimetype: false
     }
   }
@@ -28,28 +31,37 @@ export default class TimeNav extends Component {
       showTimetype: !this.state.showTimetype
     })
   }
+  handleNavTimeActive(index) {
+    this.setState({
+      navIndex: index
+    })
+  }
 
   render() {
-    const { showTimetype = false } = this.state 
+    const { showTimetype = false, navIndex = 0 } = this.state 
 
     const dropIcon = classNames({
       'fa fa-sort-desc': true,
       'icon-drop': showTimetype
     })
 
+    const navList = navTimeList.map((item, idx) => {
+
+      const className = classNames({
+        'nav-item': true,
+        'active': idx === navIndex
+      })
+
+      return  <li className={className} key={`nav-${idx}`} onClick={this.handleNavTimeActive.bind(this, idx)}>
+                <Link to={item.path}>{item.title}</Link>
+              </li>
+    })
+
     return (
       <header className='list-header'>
         <nav className='list-nav'>
           <ul className='nav-list'>
-            <li className='nav-item'>
-              <Link to='/timeline?sort=popular'>热门</Link>
-            </li>
-            <li className='nav-item'>
-              <Link to='/timeline?sort=newest'>最新</Link>
-            </li>
-            <li className='nav-item'>
-              <Link to='/timeline?sort=three_days_hottest'>热榜</Link>
-            </li>
+            {navList}
           </ul>
           <div className='dorp-down-area'>
             <div className='drop-down'>

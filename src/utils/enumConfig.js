@@ -85,8 +85,22 @@ const copyRight = [
   }
 ]
 
+const navTimeList = [
+  {
+    title: '热门',
+    path: '/timeline?sort=popular'
+  },{
+    title: '最新',
+    path: '/timeline?sort=newest'
+  },{
+    title: '热榜',
+    path: '/timeline?sort=three_days_hottest'
+  }
+]
+
 export {
   navList,
   navLabel,
-  copyRight
+  copyRight,
+  navTimeList
 }

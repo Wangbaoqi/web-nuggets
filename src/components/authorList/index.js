@@ -11,20 +11,23 @@ import {
 import './index.scss'
 export default class AuthorList extends Component {
   static propTypes = {
-
+    authorList: PropTypes.array
   }
 
   render() {
+    const { authorList = []} = this.props
+    console.log(this.props, 'authorList');
 
-    const authorList = [0,1,2].map((item, idx) => (
-      <li className='author-item' key={`ahthor-${idx}`}>
-        <Link to='' className='author'>
+    const newAuthorList = authorList.slice(0,3)
+    const authorLists = newAuthorList.map(item => (
+      <li className='author-item' key={item.id}>
+        <Link to={item.author.id} className='author'>
           <div className='item'>
             <img className='item-logo' src="https://user-gold-cdn.xitu.io/2018/11/8/166f3e51b01fc132?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1" alt="" />
             <div className='item-info'>
-              <p className='info-title'>Nate.wang <span className='level'>Lv3</span></p>
-              <div className='info-item'>前端工程师 @腾讯</div>
-              <div className='info-item'>JavaScript、前端、CSS、HTML和node </div>
+              <p className='info-title'>{item.author.username} <span className='level'>Lv{item.author.level}</span></p>
+              <div className='info-item'>{item.author.jobTitle} { item.author.company ? `@${item.author.company}` : '' }</div>
+              <div className='info-item'>{item.description} </div>
             </div>
           </div>
         </Link>
@@ -36,7 +39,7 @@ export default class AuthorList extends Component {
           🎖️作者榜
         </header>
         <ul className='list-author'>
-          {authorList}
+          {authorLists}
         </ul>
         <div className='all-author'>
           完整榜单
