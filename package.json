@@ -1,6 +1,7 @@
 {
   "name": "react_web",
   "version": "0.1.0",
+  "main": "./src/index.js",
   "private": true,
   "dependencies": {
     "@babel/core": "7.7.4",
@@ -63,6 +64,7 @@
     "terser-webpack-plugin": "2.2.1",
     "ts-pnp": "1.1.5",
     "url-loader": "2.3.0",
+    "vanilla-lazyload": "^12.4.0",
     "webpack": "4.41.2",
     "webpack-dev-server": "3.9.0",
     "webpack-manifest-plugin": "2.2.0",

@@ -6,11 +6,31 @@ import {
   Link
 } from 'react-router-dom'
 
+import LazyLoad from 'vanilla-lazyload'
+
+
 import './index.scss'
+
+if(!document.lazyLoadInstance) {
+  document.lazyLoadInstance = new LazyLoad('.img-lazy')
+}
 
 export default class TimelineList extends Component {
   static propTypes = {
     timeLineList: PropTypes.array
+  }
+
+  constructor(props) {
+    super(props)
+  }
+
+  componentDidMount() {
+    document.lazyLoadInstance.update();
+
+  }
+
+  componentDidUpdate() {
+    document.lazyLoadInstance.update();
   }
 
   render() {
@@ -61,7 +81,7 @@ export default class TimelineList extends Component {
               </div>
             </div>
             <div className='info-thumb'>
-              <img src={item.node.screenshot} />
+              <img class='img-lazy' data-src={item.node.screenshot} />
             </div>
           </div>
         </Link>
