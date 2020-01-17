@@ -34,7 +34,7 @@ export default function combileReducer(reducers) {
 
   const finalReducersKeys = Object.keys(finalReducers)
 
-  console.log(finalReducersKeys);
+  // console.log(finalReducersKeys);
 
   return (state = {}, action) => {
 
@@ -51,14 +51,14 @@ export default function combileReducer(reducers) {
         throw new Error('nextStateForKey is error')
       }
 
-      console.log(nextStateForKey, 'nextStateForKey');
-      console.log(key, 'key');
+      // console.log(nextStateForKey, 'nextStateForKey');
+      // console.log(key, 'key');
 
       nextState[key] = nextStateForKey
       hasChange = hasChange || nextStateForKey !== previousStateForKey
     }
-    console.log(hasChange, 'hasChange');
-    console.log(nextState, 'nextState');
+    // console.log(hasChange, 'hasChange');
+    // console.log(nextState, 'nextState');
     
     return hasChange ? nextState : state
   }

@@ -34,7 +34,7 @@ export default class HeaderLabel extends Component {
 
 
   render() {
-    console.log(this.props, 'lableList');
+    // console.log(this.props, 'lableList');
     
     const { labelActiveIndex = 0 } = this.state
 

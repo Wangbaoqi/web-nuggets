@@ -16,7 +16,7 @@ export default class AuthorList extends Component {
 
   render() {
     const { authorList = []} = this.props
-    console.log(this.props, 'authorList');
+    // console.log(this.props, 'authorList');
 
     const newAuthorList = authorList.slice(0,3)
     const authorLists = newAuthorList.map(item => (

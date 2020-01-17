@@ -33,7 +33,6 @@ export default class Header extends Component {
   // }
 
   handleNavActive(id) {
-    console.log(id, 'is');
     this.setState({
       activeIndex: id
     })
@@ -62,7 +61,7 @@ export default class Header extends Component {
   }
 
   render() {
-    console.log(this.props, 'header props');
+    // console.log(this.props, 'header props');
     const { themeColor = '' } = this.props
     const { activeIndex = 0, showMoreAdd = 'none', searchActive = false } = this.state
 

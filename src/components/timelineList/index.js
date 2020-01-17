@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import {
   BrowserRouter as Router,
@@ -41,7 +41,7 @@ export default class TimelineList extends Component {
 
     const timeLineLists = timeLineList.map((item, idx) => (
       <div className='list-item' key={item.node.id}>
-        <Link to={item.node.originalUrl}>
+        <Fragment>
           <div className='item-content'>
             <div className='info-content'>
               <div className='info-meta'>
@@ -49,7 +49,7 @@ export default class TimelineList extends Component {
                   { item.node.hot ? <li className='meta-item-recommend'>荐</li> : '' }
                   <li className='meta-item-post'>专栏</li>
                   <li className='meta-item meta-item-user'>
-                    <span >{item.node.user.username}</span>
+                    <Link to=''>{item.node.user.username}</Link>
                   </li>
                   <li className='meta-item meta-item-day'>3天前</li>
                   <li className='meta-item meta-item-tag'>
@@ -62,7 +62,7 @@ export default class TimelineList extends Component {
                 </ul>
               </div>
               <div className='info-title'>
-                <span className='title-big'>{item.node.title}</span>
+                <Link className='title-big' to=''>{item.node.title}</Link>
               </div>
               <div className='info-action'>
                 <ul className='action-list'>
@@ -80,11 +80,15 @@ export default class TimelineList extends Component {
                 </ul>
               </div>
             </div>
+
             <div className='info-thumb'>
-              <img class='img-lazy' data-src={item.node.screenshot} />
+              {
+                item.node.screenshot ? <img className='lazy img-lazy' data-src={item.node.screenshot}/> : ''
+              }
+              
             </div>
           </div>
-        </Link>
+        </Fragment>
       </div>
     ))
 

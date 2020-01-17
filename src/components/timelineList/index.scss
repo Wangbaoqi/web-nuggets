@@ -84,7 +84,8 @@
     
     
     .info-thumb {
-      img {
+      .lazy {
+        display: inline-block;
         width: 3rem;
         height: 3rem;
       }

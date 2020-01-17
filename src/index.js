@@ -22,7 +22,7 @@ import Provider from './redux/lib/provider'
 
 const store = createStore(reducer)
 
-console.log(store);
+// console.log(store);
 
 
 

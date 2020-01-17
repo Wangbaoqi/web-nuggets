@@ -43,12 +43,25 @@ export default class TimeLine extends Component {
     
   }
 
+  componentDidUpdate() {
+    console.log('componentDidUpdate');
+    // this._fetchArticleList()
+
+  }
+
+  componentWillReceiveProps() {
+    this._fetchArticleList()
+    
+    console.log('componentWillReceiveProps');
+    
+  }
+
   _fetchArticleCategory() {
     // 
     NetWork('http://127.0.0.1:7001/api/categories', {
       params: {}
     }).then(res => {
-      console.log(res)
+      // console.log(res)
     }).catch(err => {
       console.log(err, 'error');
     })
@@ -63,7 +76,6 @@ export default class TimeLine extends Component {
 
       }
     }).then(res => {
-      console.log(res)
       const { data = {} } = res;
       const { articleFeed:{ items = {} } } = data;
       this.setState({
@@ -83,7 +95,6 @@ export default class TimeLine extends Component {
 
       }
     }).then(res => {
-      console.log(res)
       const { data: { recommendationCard = {}}} = res
       const { items = []} = recommendationCard;
       this.setState({
@@ -105,14 +116,14 @@ export default class TimeLine extends Component {
       this.setState({
         interestBook: data
       })
-      console.log(res)
+      // console.log(res)
     }).catch(err => {
       console.log(err, 'error');
     })
   }
 
   render() {
-    console.log(this.props)
+    // console.log(this.props, 'jjjjj')
     const { timeLineList = [], authorList = [], interestBook = [] } = this.state
     const { location, history, match, staticContext} = this.props
     return (
